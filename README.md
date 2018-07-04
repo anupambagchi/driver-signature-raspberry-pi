@@ -1,5 +1,5 @@
 # driver-signature-raspberry-pi
-Is it possible to predict who is driving a vehicle by analyzing the driving pattern of a driver. If there are multiple people driving a vehicle (mostly true in a commercial driving scenario), can the driving style be captured and learned?
+Is it possible to predict who is driving a vehicle by analyzing the driving pattern of a driver? If there are multiple people driving a vehicle (mostly true in a commercial driving scenario), can the driving style be captured and learned?
 
 The postulate is that this is possible - by reading data from the car's OBD port at the fast enough frequency. One can create feature sets from signals received from the car's CAN bus (via a ELM 327 interface) through the OBD port, then use that feature set to learn who the driver is. A real-time prediction is possible by deploying this model and quering it in real-time.
 
