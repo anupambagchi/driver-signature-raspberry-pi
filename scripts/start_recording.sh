@@ -1,1 +1,1 @@
-python /opt/obd-edge-computing/src/obd_sqlite_recorder.py $1 $2
+python /opt/driver-signature-raspberry-pi/src/obd_sqlite_recorder.py $1 $2

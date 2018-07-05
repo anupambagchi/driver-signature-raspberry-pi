@@ -32,7 +32,7 @@ class DataCompactor():
     @staticmethod
     def collect():
         # First find out the id of the record that was included in the last compaction task
-        dbconnection = sqlite3.connect('/opt/obd-edge-computing/database/obd2data.db')
+        dbconnection = sqlite3.connect('/opt/driver-signature-raspberry-pi/database/obd2data.db')
         dbcursor = dbconnection.cursor()
         last_id_found = dbcursor.execute('SELECT LAST_PROCESSED_ID FROM LAST_PROCESSED WHERE TABLE_NAME = "CAR_READINGS" LIMIT 1')
 
@@ -90,7 +90,7 @@ class DataCompactor():
                               'gps_speed', 'short_term_fuel_trim_2', 'o212', 'short_term_fuel_trim_1', 'maf',
                               'throttle_pos', 'climb', 'temp', 'long_term_fuel_trim_1', 'heading', 'long_term_fuel_trim_2']
 
-        dbconnection = sqlite3.connect('/opt/obd-edge-computing/database/obd2summarydata.db')
+        dbconnection = sqlite3.connect('/opt/driver-signature-raspberry-pi/database/obd2summarydata.db')
         dbcursor = dbconnection.cursor()
         for minuteStamp in minutePackets:
             minutePack = minutePackets[minuteStamp]
@@ -158,7 +158,7 @@ class DataCompactor():
 
         url = base_url + "/obd2/api/v1/17350/upload"
 
-        dbconnection = sqlite3.connect('/opt/obd-edge-computing/database/obd2summarydata.db')
+        dbconnection = sqlite3.connect('/opt/driver-signature-raspberry-pi/database/obd2summarydata.db')
         dbcursor = dbconnection.cursor()
         dbupdatecursor = dbconnection.cursor()
 
@@ -190,7 +190,7 @@ class DataCompactor():
             delta = timedelta(days=15)
             fifteendaysago = localtime - delta
             fifteendaysago_str = fifteendaysago.isoformat()
-            dbconnection = sqlite3.connect('/opt/obd-edge-computing/database/obd2summarydata.db')
+            dbconnection = sqlite3.connect('/opt/driver-signature-raspberry-pi/database/obd2summarydata.db')
             dbcursor = dbconnection.cursor()
             dbcursor.execute('DELETE FROM PROCESSED_READINGS WHERE EVENTTIME < ?', (fifteendaysago_str,))
             dbconnection.commit()

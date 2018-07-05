@@ -1,1 +1,1 @@
-* * * * * /opt/obd-edge-computing/scripts/collect_and_transmit.sh 1>> /tmp/cronresults.log 2>> /tmp/cronerrors.log
+* * * * * /opt/driver-signature-raspberry-pi/scripts/collect_and_transmit.sh 1>> /tmp/cronresults.log 2>> /tmp/cronerrors.log

@@ -5,5 +5,5 @@ if [ "$runningprocs" != "0" ] ; then
     # echo "A process is already running on this machine"
     exit
 fi
-cd /opt/obd-edge-computing/src
-python /opt/obd-edge-computing/src/obd_transmitter.py
+cd /opt/driver-signature-raspberry-pi/src
+python /opt/driver-signature-raspberry-pi/src/obd_transmitter.py

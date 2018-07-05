@@ -186,7 +186,7 @@ if __name__ == '__main__':
             print ("IOError - so " + usbPort + " is also not a GSM device")
 
     # Open a SQLlite3 connection
-    dbconnection = sqlite3.connect('/opt/obd-edge-computing/database/obd2data.db')
+    dbconnection = sqlite3.connect('/opt/driver-signature-raspberry-pi/database/obd2data.db')
     dbcursor = dbconnection.cursor()
 
     # Do some cleanup as soon as you start. This is to prevent the database size from growing too big.
